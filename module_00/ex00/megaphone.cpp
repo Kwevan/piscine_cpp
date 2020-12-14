@@ -13,10 +13,7 @@ int		main(int ac, char **av)
 	if (ac == 1)
 		ft_print(no_args_str);
 	for (int i = 1; av[i]; i++)
-	{
 		ft_print(av[i]);
-		ft_print(av[i + 1] ? " " : "");
-	}
 	std::cout <<  std::endl;
 	return (0);
 }
