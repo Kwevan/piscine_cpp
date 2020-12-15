@@ -2,10 +2,20 @@
 
 int		ft_search(Contact *contacts, int *count)
 {
+	std::string input;
+	int index;
+
 	for (int i = 0; i < *count; i++)
 	{
 		contacts[i].partialDisplay();
 	}
+		std::cout << "Type an index: ";
+		getline(std::cin, input);
+	index = std::stoi(input);
+	if (index <= *(count))
+		contacts[index].displayAttr();
+	else
+		std::cout << "Doesn't exist";
 	return (2);
 }
 
@@ -16,7 +26,7 @@ int		ft_add(Contact *contacts, int *count)
 		std::cout << "phonebook$ " << "Memory Full" << std::endl;
 		return (1);
 	}
-	contacts[*(count)].fill();
+	contacts[*(count)].fill(*count);
 	*(count) += 1;
 	std::cout << "phonebook$ " << "New contact successfully added: " << std::endl;
 	return (1);

@@ -3,19 +3,22 @@
 
 # include <iostream>
 # include <iomanip>
+# include <string>
 
 class Contact
 {
 	public:
 		Contact();
-		void fill();
+		void fill(int i);
 		void partialDisplay();
+		void displayAttr();
 	private:
-		std::string firstName;
+		int			index;
+		std::string	firstName;
 		std::string lastName;
 		std::string nickname;
 		std::string login;
-		std::string adress;
+		std::string address;
 		std::string email;
 		std::string number;
 		std::string birthday;
@@ -23,6 +26,8 @@ class Contact
 		std::string color;
 		std::string darkestSecret;
 
+		void fill2(std::string field, std::string *attr);
+///		void printFormated();
 };
 
 # endif
