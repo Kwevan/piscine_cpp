@@ -2,12 +2,14 @@
 # define CONTACT_H
 
 # include <iostream>
+# include <iomanip>
 
 class Contact
 {
 	public:
 		Contact();
 		void fill();
+		void partialDisplay();
 	private:
 		std::string firstName;
 		std::string lastName;

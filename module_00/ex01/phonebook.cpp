@@ -1,6 +1,15 @@
 #include "contact.hpp"
 
-int		ft_add_contact(Contact *contacts, int *count)
+int		ft_search(Contact *contacts, int *count)
+{
+	for (int i = 0; i < *count; i++)
+	{
+		contacts[i].partialDisplay();
+	}
+	return (2);
+}
+
+int		ft_add(Contact *contacts, int *count)
 {
 	if ((*count) >= 8)
 	{
@@ -16,16 +25,13 @@ int		ft_add_contact(Contact *contacts, int *count)
 int		ft_check_input(std::string input, Contact *contacts, int *count)
 {
 		if (input ==  "ADD")
-			return (ft_add_contact(contacts, count));
+			return (ft_add(contacts, count));
 		else if (input == "SEARCH")
-			return (2);
+			return (ft_search(contacts, count));
 		else if (input == "EXIT")
 			return (3);
-		else
-		{
-			std::cout << "Usage: ADD, SEARCH or EXIT" << std::endl;	
-			return (0);
-		}
+		std::cout << "Usage: ADD, SEARCH or EXIT" << std::endl;	
+		return (0);
 }
 
 int		main(void)

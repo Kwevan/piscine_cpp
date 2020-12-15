@@ -38,3 +38,11 @@ void Contact::fill()
 	std::cout << "Darkest Secret: ";
 	getline(std::cin, this->darkestSecret);
 }
+
+void Contact::partialDisplay()
+{
+//index, firstname, last name, nickname
+
+	std::cout << std::setw(20) <<"index : todo" << "|";
+	std::cout << "First Name :" << std::setw(2) << this->firstName << std::endl;
+}
