@@ -1,7 +1,9 @@
-#include "contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact()
-{}
+{
+	//I am the destructor of this class
+}
 
 void Contact::fill2(std::string field, std::string *attribute)
 {
@@ -23,7 +25,7 @@ void Contact::fill(int i)
 	fill2("Darkest Secret: ", &this->darkestSecret);
 }
 
-std::string format(std::string str)
+std::string Contact::format(std::string str)
 {
 	std::string res;
 	res = str;
@@ -35,7 +37,7 @@ std::string format(std::string str)
 	return (res);
 
 }
-void printFormated(std::string field1, std::string field2, std::string field3, std::string field4)
+void Contact::printFormated(std::string field1, std::string field2, std::string field3, std::string field4)
 {
 	std::cout << std::setw(10) << field1 << "|";
 	std::cout << std::setw(10) << field2 << "|";
@@ -50,7 +52,7 @@ void Contact::partialDisplay()
 	
 }
 
-void Contact::displayAttr()
+void Contact::fullDisplay()
 {
 	std::cout << "First Name: " << firstName << std::endl;
 	std::cout << "Last Name: " << lastName << std::endl;
@@ -62,4 +64,9 @@ void Contact::displayAttr()
 	std::cout << "Favorite Meal: " << favMeal << std::endl;
 	std::cout << "underwear Color: " << color << std::endl;
 	std::cout << "Darkest Secret: " << darkestSecret << std::endl;
+}
+
+Contact::~Contact()
+{
+	//I am the destructor of this class
 }

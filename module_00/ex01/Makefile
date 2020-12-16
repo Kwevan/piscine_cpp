@@ -1,7 +1,7 @@
 NAME	=	phonebook
 
 SRCS 	=	phonebook.cpp\
-			contact.cpp
+			Contact.cpp
 
 CC		=	clang++
 

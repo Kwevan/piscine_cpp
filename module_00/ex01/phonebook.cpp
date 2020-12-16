@@ -1,4 +1,4 @@
-#include "contact.hpp"
+#include "Contact.hpp"
 
 int		ft_search(Contact *contacts, int *count)
 {
@@ -13,9 +13,9 @@ int		ft_search(Contact *contacts, int *count)
 		getline(std::cin, input);
 	index = std::stoi(input);
 	if (index <= *(count))
-		contacts[index].displayAttr();
+		contacts[index].fullDisplay();
 	else
-		std::cout << "Doesn't exist";
+		std::cout << "Doesn't exist" << std::endl;
 	return (2);
 }
 

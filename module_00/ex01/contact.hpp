@@ -1,5 +1,5 @@
-# ifndef CONTACT_H
-# define CONTACT_H
+# ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <iostream>
 # include <iomanip>
@@ -11,10 +11,11 @@ class Contact
 		Contact();
 		void fill(int i);
 		void partialDisplay();
-		void displayAttr();
+		void fullDisplay();
+		~Contact();
 	private:
-		int			index;
-		std::string	firstName;
+		int         index;
+		std::string firstName;
 		std::string lastName;
 		std::string nickname;
 		std::string login;
@@ -27,7 +28,8 @@ class Contact
 		std::string darkestSecret;
 
 		void fill2(std::string field, std::string *attr);
-///		void printFormated();
+		std::string format(std::string str);
+		void printFormated(std::string f1, std::string f2, std::string f3, std::string f4);
 };
 
 # endif
