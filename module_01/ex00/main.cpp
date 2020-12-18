@@ -1,25 +1,25 @@
 #include "Pony.hpp"
 #include <iostream>
 #include <unistd.h>
-void ponyOnTheHeap(void)
+void ponyOnTheStack(void)
 {
 	Pony pony;
 
-	pony.run("on the heap");
+	pony.run("on the stack");
 }
 
-void ponyOnTheStack(void)
+void ponyOnTheHeap(void)
 {
 	Pony *pony;
 
 	pony = new Pony;
-	pony->run("on the stack");
+	pony->run("on the heap");
 	delete pony;
 }
 
 int	main(void)
 {
-	ponyOnTheHeap();
 	ponyOnTheStack();
+	ponyOnTheHeap();
 	return (0);
 }
