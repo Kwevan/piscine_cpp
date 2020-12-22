@@ -1,0 +1,11 @@
+You need to chmod -r no_perm.txt
+
+ok ok ok
+
+ok 
+
+woaw
+cest trop puissant serieux
+
+
+ok
