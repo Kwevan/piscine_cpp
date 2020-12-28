@@ -17,13 +17,13 @@ ScavTrap::ScavTrap(std::string name)
 
 void ScavTrap::rangedAttack(std::string const &target)
 {
-	std::cout << "FR4G-TP " << this->name << " attacks " << target
+	std::cout << "SC4V-TP " << this->name << " attacks " << target
 	<< " at range, causing " << this->rangedAd  << " points of damage!" << std::endl;
 }
 
 void ScavTrap::meleeAttack(std::string const &target)
 {
-	std::cout << "FR4G-TP " << this->name << " attacks " << target
+	std::cout << "SC4V-TP " << this->name << " attacks " << target
 	<< " in melee, causing " << this->meleeAd  << " points of damage!" << std::endl;
 }
 
@@ -65,7 +65,7 @@ void ScavTrap::challengeNewcomer(std::string const &target)
 		"Catch a fly with chopsticks",
 		"Code minishell in one day",
 	};
-	std::cout << "FR4G-TP " << this->name << " attacks " << target
+	std::cout << "SC4V-TP " << this->name << " attacks " << target
 	<< " with the challenge: " << attack[rand() % 5] << std::endl;	
 	
 }
