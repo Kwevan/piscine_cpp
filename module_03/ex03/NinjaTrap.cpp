@@ -34,7 +34,10 @@ void NinjaTrap::ninjaShoebox(NinjaTrap &target)
 
 void NinjaTrap::ninjaShoebox(FragTrap &target)
 {
-	std::cout << this->name << " throws a Shuriken at " << target.name << std::endl << "[...] ouch" << std::endl;
+	if (this->name == "Jean Baptiste Grenouille")
+	std::cout << this->name << " creates a new smell from " << target.name << std::endl << "[...] Mmm, it smells so good!)" << std::endl;
+	else
+	std::cout << this->name << " throws a shuriken at " << target.name << std::endl << "[...] ouch" << std::endl;
 }
 
 void NinjaTrap::ninjaShoebox(ScavTrap &target)

@@ -11,13 +11,14 @@ void spaces(int n)
 int main()
 {
 
-	FragTrap bilbo("Bilbo");
+	FragTrap bilbo("Anastasia");
 	ScavTrap gandalf("Gandalf");
-	NinjaTrap t("Edward");
+	NinjaTrap t("Jean Baptiste Grenouille");
+	NinjaTrap e("Bilbo");
 
 	spaces(2);
 
-	t.ninjaShoebox(t);
+	t.ninjaShoebox(e);
 
 	spaces(2);
 
