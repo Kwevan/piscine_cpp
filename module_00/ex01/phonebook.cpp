@@ -40,7 +40,7 @@ int		ft_add(Contact *contacts, int *count)
 	}
 	contacts[*(count)].fill(*count);
 	*(count) += 1;
-	std::cout << "phonebook$ " << "New contact successfully added: " << std::endl;
+	std::cout << "phonebook$ " << "New contact successfully added !" << std::endl;
 	return (1);
 }
 
