@@ -5,17 +5,29 @@ int		ft_search(Contact *contacts, int *count)
 	std::string input;
 	int index;
 
+	if (*count == 0)
+	{
+		std::cout << "There are no contacts in the phonebook yet, type ADD to add one" << std::endl;
+		return (2);
+	}
+
 	for (int i = 0; i < *count; i++)
 	{
 		contacts[i].partialDisplay();
 	}
-		std::cout << "Type an index: ";
-		getline(std::cin, input);
-	index = std::stoi(input);
-	if (index <= *(count))
+	std::cout << "Type an index: ";
+	getline(std::cin, input);
+
+	if (input.size() != 1)
+	{
+		std::cout << "Error, only one digit is permitted" << std::endl;
+		return (2);
+	}
+	index = input[0] - 48;
+	if (index >= 0 && index <= *(count))
 		contacts[index].fullDisplay();
 	else
-		std::cout << "Doesn't exist" << std::endl;
+		std::cout << "Doesn't exist or input error" << std::endl;
 	return (2);
 }
 

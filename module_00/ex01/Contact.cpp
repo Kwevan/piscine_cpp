@@ -7,8 +7,12 @@ Contact::Contact()
 
 void Contact::fill2(std::string field, std::string *attribute)
 {
-	std::cout << field;
-	getline(std::cin, *attribute);
+	do
+	{
+		std::cout << field;
+		getline(std::cin, *attribute);
+	}
+	while ((*attribute).empty());
 }
 void Contact::fill(int i)
 {
@@ -47,8 +51,11 @@ void Contact::printFormated(std::string field1, std::string field2, std::string 
 
 void Contact::partialDisplay()
 {
+	std::stringstream s;
+
+	s << this->index;
 	printFormated("INDEX", "FIRST NAME", "LAST NAME", "NICKNAME");
-	printFormated(std::to_string(this->index), format(this->firstName), format(this->lastName), format(this->nickname));
+	printFormated(s.str(), format(this->firstName), format(this->lastName), format(this->nickname));
 	
 }
 
