@@ -24,7 +24,7 @@ int		ft_search(Contact *contacts, int *count)
 		return (2);
 	}
 	index = input[0] - 48;
-	if (index >= 0 && index <= *(count))
+	if (index >= 0 && index < *(count))
 		contacts[index].fullDisplay();
 	else
 		std::cout << "Doesn't exist or input error" << std::endl;
