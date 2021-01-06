@@ -46,7 +46,7 @@ void work(int ac, char **av)
 		pos+= s2.length();
 	}
 
-	std::ofstream out(output_file, std::ofstream::out);
+	std::ofstream out(output_file);
     out << content;
     out.close();	
 }
