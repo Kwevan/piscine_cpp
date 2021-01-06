@@ -4,13 +4,6 @@
 #include <iostream>
 #include <sstream> 
 
-std::string ft_up(std::string str)
-{
-	for(size_t i = 0; i < str.length(); i++)
-		str[i] = toupper(str[i]);
-	return (str);
-}
-
 void work(int ac, char **av)
 {
 	if (ac != 4)
@@ -29,12 +22,14 @@ void work(int ac, char **av)
 	if (!s1.length() || !s2.length())
 		throw "s1 or s2 is empty";	
 	
-	output_file = ft_up(input_file) += ".replace";
-	std::ifstream t(input_file);
+	output_file = input_file;
+	output_file += ".replace";
+
+	std::ifstream t(input_file.c_str());
 	std::stringstream buffer;
 
 	if (!t.is_open() || !t.good())
-		throw "can't open file";	
+		throw "can't open input file";	
 
 	buffer << t.rdbuf();
 	content = buffer.str();
@@ -45,9 +40,11 @@ void work(int ac, char **av)
 		content.replace(pos, s1.length(), s2);
 		pos+= s2.length();
 	}
-
-	std::ofstream out(output_file);
+	std::ofstream out;
+	out.open(output_file.c_str(), std::ofstream::trunc);
     out << content;
+	if (!t.is_open() || !t.good())
+		throw "can't open output file";
     out.close();	
 }
 

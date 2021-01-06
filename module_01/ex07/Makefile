@@ -6,9 +6,9 @@ CC		=	clang++
 
 OBJS	= 	$(SRCS:.cpp=.o)
 
-FLAGS	=	-Wall -Wextra -Werror
+#FLAGS	=	-Wall -Wextra -Werror
 
-#FLAGS	=	-Wall -Wextra -Werror -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 
 all:		$(NAME)
@@ -23,7 +23,7 @@ clean:
 			rm -rf $(OBJS)
 
 fclean:		clean
-			rm -rf $(NAME)
+			rm -rf $(NAME) test_files/*.replace
 
 re:			fclean all
 
