@@ -9,4 +9,5 @@ void Pony::run(std::string str)
 }
 
 
-Pony::~Pony(){}
+Pony::~Pony()
+{}

@@ -8,16 +8,16 @@ OBJS	= 	$(SRCS:.cpp=.o)
 
 FLAGS	=	-Wall -Wextra -Werror
 
-FLAGS2	=	-Wall -Wextra -Werror -std=c++98
+#FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-.c.o:
-			$(CC) $(FLAGS) $@ -c $<
+%.o: %.cpp
+			$(CC) $(FLAGS) -o $@ -c $<
 
 clean:
 			rm -rf $(OBJS)
