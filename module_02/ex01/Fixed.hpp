@@ -21,7 +21,6 @@ class Fixed
 		~Fixed();
 	private:
 		int value;
-		int v2;
 		static const int bits = 8;
 };
 

@@ -20,6 +20,13 @@ int main(void)
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
+
+	Fixed const e(16);
+	Fixed const f(16.2f);
+	std::cout << "e is " << e.getRawBits() << std::endl;
+	std::cout << "f is " << f.getRawBits() << std::endl;
+				
+
 	return 0;
 }
 
