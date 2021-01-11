@@ -1,9 +1,31 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() : ClapTrap()
+{}
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 100, 50, 50, 1, 20, 15, 3)
 {
 	srand(time(NULL));
 	std::cout << "ScavTrap constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy)
+{
+	*this = copy;
+}
+
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &copy)
+{
+	this->name = copy.name;
+	this->hp = copy.hp;
+	this->maxHp = copy.maxHp;
+	this->energy = copy.energy;
+	this->lvl = copy.lvl;
+	this->meleeAd = copy.meleeAd;
+	this->rangedAd = copy.rangedAd;
+	this->armorReduc = copy.armorReduc;
+	return(*this);
 }
 
 void ScavTrap::rangedAttack(std::string const &target)

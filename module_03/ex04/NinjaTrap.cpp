@@ -1,9 +1,30 @@
 #include "NinjaTrap.hpp"
 
+NinjaTrap::NinjaTrap() : ClapTrap()
+{}
+
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name, 60, 60, 120, 120, 1, 60, 5, 0)
 {
 	srand(time(NULL));
 	std::cout << "NinjaTrap constructor called" << std::endl;
+}
+
+NinjaTrap::NinjaTrap(const NinjaTrap &copy)
+{
+	*this = copy;
+}
+
+NinjaTrap &NinjaTrap::operator=(const NinjaTrap &copy)
+{
+	this->name = copy.name;
+	this->hp = copy.hp;
+	this->maxHp = copy.maxHp;
+	this->energy = copy.energy;
+	this->lvl = copy.lvl;
+	this->meleeAd = copy.meleeAd;
+	this->rangedAd = copy.rangedAd;
+	this->armorReduc = copy.armorReduc;
+	return(*this);
 }
 
 void NinjaTrap::rangedAttack(std::string const &target)

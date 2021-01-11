@@ -1,5 +1,8 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap()
+{}
+
 FragTrap::FragTrap(std::string name)
 {
 	this->name = name;
@@ -13,6 +16,24 @@ FragTrap::FragTrap(std::string name)
 	this->armorReduc = 5;
 	srand(time(NULL));
 	std::cout << "FragTrap constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap &copy)
+{
+	*this = copy;
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &copy)
+{
+	this->name = copy.name;
+	this->hp = copy.hp;
+	this->maxHp = copy.maxHp;
+	this->energy = copy.energy;
+	this->lvl = copy.lvl;
+	this->meleeAd = copy.meleeAd;
+	this->rangedAd = copy.rangedAd;
+	this->armorReduc = copy.armorReduc;
+	return(*this);
 }
 
 void FragTrap::rangedAttack(std::string const &target)
@@ -50,11 +71,6 @@ void FragTrap::beRepaired(unsigned int amount)
 	std::cout << ", new hp = " << this->hp  << std::endl;
 }
 
-FragTrap::~FragTrap()
-{
-	std::cout << "FragTrap destructor called" << std::endl;
-}
-
 void FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
 	std::string attack[5] =
@@ -74,4 +90,9 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 	<< " with: " << attack[rand() % 5] << std::endl;	
 	
 	this->energy -= 25;
+}
+
+FragTrap::~FragTrap()
+{
+	std::cout << "FragTrap destructor called" << std::endl;
 }

@@ -8,9 +8,8 @@ void spaces(int n)
 
 int main()
 {
-
 	FragTrap f("Bilbo");
-
+	
 	spaces(2);
 
 	f.rangedAttack("Smaug");

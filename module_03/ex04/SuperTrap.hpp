@@ -9,7 +9,10 @@
 class SuperTrap : virtual public FragTrap, virtual public NinjaTrap
 {
 	public:
+			SuperTrap();
 			SuperTrap(std::string name);
+			SuperTrap(const SuperTrap &copy);
+			SuperTrap &operator=(const SuperTrap &copy);
 			void rangedAttack(std::string const &target);
 			void meleeAttack(std::string const &target);
 			~SuperTrap();

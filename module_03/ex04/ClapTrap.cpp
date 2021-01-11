@@ -1,5 +1,8 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{}
+
 ClapTrap::ClapTrap(std::string name, int hp, int maxHp, int energy, int maxEnergy, int lvl, int meleeAd, int rangedAd, int armorReduc)
 {
 	this->name = name;
@@ -13,6 +16,24 @@ ClapTrap::ClapTrap(std::string name, int hp, int maxHp, int energy, int maxEnerg
 	this->armorReduc = armorReduc;
 	srand(time(NULL));
 	std::cout << "ClapTrap constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+	*this = copy;
+}
+
+ClapTrap &ClapTrap ::operator=(const ClapTrap &copy)
+{
+	this->name = copy.name;
+	this->hp = copy.hp;
+	this->maxHp = copy.maxHp;
+	this->energy = copy.energy;
+	this->lvl = copy.lvl;
+	this->meleeAd = copy.meleeAd;
+	this->rangedAd = copy.rangedAd;
+	this->armorReduc = copy.armorReduc;
+	return(*this);
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -30,8 +51,8 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->hp + amount > this->maxEnergy)
-		this->hp = this->maxEnergy;
+	if (this->hp + amount > this->maxHp)
+		this->hp = this->maxHp;
 	else
 		this->hp += amount;
 	std::cout <<  this->name << " is healing";
