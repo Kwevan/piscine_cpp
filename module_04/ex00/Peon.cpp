@@ -3,9 +3,8 @@
 Peon::Peon()
 {}
 
-Peon::Peon(std::string name)
+Peon::Peon(std::string name) : Victim(name)
 {
-	this->name = name;
 	std::cout << "Zog zog." << std::endl;
 }
 

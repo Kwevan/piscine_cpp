@@ -1,5 +1,6 @@
 #include "Sorcerer.hpp"
 #include "Peon.hpp"
+#include "Human.hpp"
 
 
 void spaces(int n)
@@ -10,7 +11,7 @@ void spaces(int n)
 
 int main()
 {
-	Sorcerer witch("Morgana", "of The Alliance");
+/*	Sorcerer witch("Morgana", "of The Alliance");
 	spaces(1);
 	
 	std::cout << witch << std::endl;
@@ -24,6 +25,20 @@ int main()
 
 	Peon p("p");
 	witch.polymorph(p);	
+	spaces(1);
+	
+	Human dd("Dudley");
+	dd.getPolymorphed();
+	witch.polymorph(dd);
+	spaces(2);
+*/
 
-	return (0);
+	Sorcerer robert("Robert", "the Magnificent");
+	Victim jim("Jimmy");
+	Peon joe("Joe");
+	std::cout << robert << jim << joe;
+	robert.polymorph(jim);
+	robert.polymorph(joe);
+
+	return 0;
 }
