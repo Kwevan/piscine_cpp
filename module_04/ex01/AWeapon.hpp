@@ -2,6 +2,7 @@
 #define AWEAPON_HPP
 
 #include <iostream>
+
 class AWeapon
 {
 	private:

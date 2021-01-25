@@ -1,16 +1,16 @@
 #ifndef PLASMARIFLE_HPP
 # define PLASMARIFLE_HPP
 
-# include <iostream>
+# include "AWeapon.hpp"
 
-class PlasmaRifle {
+class PlasmaRifle : public AWeapon
+{
  public:
-  PlasmaRifle();
-  PlasmaRifle(std::string const & name, int apcost, int damage);
-  PlasmaRifle(const PlasmaRifle &copy);
-  ~PlasmaRifle();
-  PlasmaRifle &operator=(const PlasmaRifle &copy);
-
+	PlasmaRifle();
+	PlasmaRifle(const PlasmaRifle &copy);
+	virtual ~PlasmaRifle();
+	PlasmaRifle &operator=(const PlasmaRifle &copy);
+	void attack() const;
  private:
 };
 
