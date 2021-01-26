@@ -7,7 +7,7 @@ AssaultTerminator::AssaultTerminator()
 
 AssaultTerminator::~AssaultTerminator() 
 {
-	std::cout << "I’ll be back..." << std::endl;
+	std::cout << "I'll be back..." << std::endl;
 }
 
 AssaultTerminator::AssaultTerminator(const AssaultTerminator &copy) 
@@ -17,8 +17,6 @@ AssaultTerminator::AssaultTerminator(const AssaultTerminator &copy)
 
 AssaultTerminator  &AssaultTerminator::operator=(const AssaultTerminator &copy) 
 {
-	//todo
-	std::cout << "todo terminator";
 	(void)copy;
 	return (*this);
 }

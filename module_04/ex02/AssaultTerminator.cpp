@@ -17,8 +17,6 @@ TacticalMarine::TacticalMarine(const TacticalMarine &copy)
 
 TacticalMarine  &TacticalMarine::operator=(const TacticalMarine &copy) 
 {
-	//todo
-	std::cout << "todo tactical";
 	(void)copy;
 	return (*this);
 }

@@ -2,6 +2,7 @@
 # define SQUAD_HPP
 
 # include "ISquad.hpp"
+# include <iostream>
 
 class Squad : public ISquad
 {
@@ -15,9 +16,8 @@ class Squad : public ISquad
   int		push(ISpaceMarine *item);
  private:
 	int count;
-	int size;
-	ISpaceMarine *marines[5];
-
+	int max;
+	ISpaceMarine *marines[4];
 };
 
 #endif

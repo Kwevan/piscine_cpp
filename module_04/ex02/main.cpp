@@ -12,13 +12,44 @@ int main()
 	vlc->push(jim);
 	for (int i = 0; i < vlc->getCount(); ++i) {
 			ISpaceMarine* cur = vlc->getUnit(i);
-			cur->battleCry(); cur->rangedAttack(); cur->meleeAttack();
+			cur->battleCry();
+			cur->rangedAttack();
+			cur->meleeAttack();
 	}
 	delete vlc;
 
 
-//okkkk
+	std::cout << "\n[ end of subject's main ]\n" << std::endl;
 
-		Squad s;
-		return (0);
+
+	ISpaceMarine* boby = new TacticalMarine;
+	ISpaceMarine* cocy = new AssaultTerminator;
+
+	ISquad* is = new Squad;
+	is->push(boby);
+	is->push(cocy);
+	ISquad* is2 = is;
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+			ISpaceMarine* cur = is->getUnit(i);
+			std::cout << i <<" - ";
+			cur->battleCry();
+
+	}
+	ISquad* is3(is);
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+			ISpaceMarine* cur = is->getUnit(i);
+			std::cout << i << " - ";
+			cur->battleCry();
+	}
+	delete(is);
+
+	ISpaceMarine* c = new AssaultTerminator;
+	Squad s;
+	s.push(c);
+	s.getUnit(0)->battleCry();;
+	Squad t = s;
+	t.getUnit(0)->battleCry();;
+	return (0);
 }

@@ -3,18 +3,17 @@
 Squad::Squad() 
 {
 	this->count = 0;
-	this->size = 5;
-int i = 0;
-	while (i < 5)
-	{
+	this->max = 4;
+	for(int i = 0; i > this->max; i++)
 		this->marines[i] = 0;
-		i++;
-	}
 	return ;
 }
 
 Squad::~Squad() 
-{}
+{
+	for (int i = 0; i < this->count; i++)
+		delete this->marines[i];
+}
 
 Squad::Squad(const Squad &copy) 
 {
@@ -24,6 +23,8 @@ Squad::Squad(const Squad &copy)
 Squad  &Squad::operator=(const Squad &copy) 
 {
 	this->count = copy.count;
+	for (int i = 0; i < this->count; i++)
+		this->marines[i] = copy.marines[i]->clone();
 	return (*this);
 }
 
@@ -33,11 +34,18 @@ int Squad::getCount() const
 }
 
 
-ISpaceMarine*	Squad::getUnit(int N) const {
-
-(void)N; return (0);
+ISpaceMarine*	Squad::getUnit(int N) const
+{
+	if (N >= 0 && N < this->count)
+		return (this->marines[N]);
+	return (NULL);
 }
 
-int				Squad::push(ISpaceMarine *item) {
-(void)item; return (0);
+int				Squad::push(ISpaceMarine *item)
+{
+	if (this->count >= this->max)
+		return (1);
+	marines[this->count] = item;
+	this->count++;
+return (0);
 }
