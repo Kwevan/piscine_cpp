@@ -16,17 +16,20 @@ int main()
 	std::cout << *me;
 	me->equip(pf);
 	me->attack(b);
-	std::cout << *me; me->equip(pr);
-	std::cout << *me; me->attack(b);
+	std::cout << *me;
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(b);
 	std::cout << *me;
 	me->attack(b);
 	std::cout << *me;
 
-/*
-	Enemy e(19, "enemy");
+
+/*	Enemy e(19, "enemy");
 	SuperMutant s;
 	s.takeDamage(8);	
 	RadScorpion r ;
+	RadScorpion r2 ;
 	r.takeDamage(10);
 
 	PlasmaRifle pr;
@@ -36,5 +39,14 @@ int main()
 	c.equip(&pr);
 	std::cout << c;
 	c.attack(&r);
+	c.attack(&r);
+	c.attack(&r);
+	c.attack(&r2);
+	c.attack(&r2);
+	c.attack(&r2);
+	c.attack(&s);
+	c.attack(&s);
+	c.attack(&s);
+	std::cout << c.getName() << " has "<< c.getAp() << " AP" << std::endl;
 */
 }

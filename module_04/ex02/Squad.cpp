@@ -22,9 +22,11 @@ Squad::Squad(const Squad &copy)
 
 Squad  &Squad::operator=(const Squad &copy) 
 {
-	this->count = copy.count;
 	for (int i = 0; i < this->count; i++)
+			delete this->marines[i];
+	for (int i = 0; i < copy.count; i++)
 		this->marines[i] = copy.marines[i]->clone();
+	this->count = copy.count;
 	return (*this);
 }
 

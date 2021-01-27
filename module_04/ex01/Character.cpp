@@ -68,7 +68,7 @@ int	Character::getAp()
 std::ostream& operator<<(std::ostream& out, Character &c)
 {
 	if (c.getWeapon())
-		out << c.getName() << " has " << c.getAp() << " AP and wields a : " << c.getWeapon()->getName();
+		out << c.getName() << " has " << c.getAp() << " AP and wields a " << c.getWeapon()->getName();
 	else
 		out << c.getName() << " has " << c.getAp() << " AP and is unarmed";
 return (out << std::endl);

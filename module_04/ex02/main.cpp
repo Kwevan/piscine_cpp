@@ -36,6 +36,9 @@ int main()
 			cur->battleCry();
 
 	}
+	
+	std::cout << "\n[ p2 ]\n" << std::endl;
+
 	ISquad* is3(is);
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
@@ -43,13 +46,25 @@ int main()
 			std::cout << i << " - ";
 			cur->battleCry();
 	}
+	(void)is3;
+	(void)is2;
 	delete(is);
+	
+	std::cout << "\n[ p3 ]\n" << std::endl;
 
 	ISpaceMarine* c = new AssaultTerminator;
-	Squad s;
-	s.push(c);
-	s.getUnit(0)->battleCry();;
-	Squad t = s;
-	t.getUnit(0)->battleCry();;
+	ISpaceMarine* tactical = new TacticalMarine;
+	Squad *s = new Squad;
+	s->push(c);
+	s->getUnit(0)->battleCry();;
+	Squad *t = s;
+//	Squad *t = new Squad;
+//	t = s;
+	t->push(tactical);
+	t->getUnit(0)->battleCry();
+	t->getUnit(1)->battleCry();
+	delete(s);
+
 	return (0);
+
 }
