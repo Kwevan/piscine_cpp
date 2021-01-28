@@ -4,6 +4,8 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form {
 	public:
 		Form(const std::string &name, const int sGrade, const int eGrade);

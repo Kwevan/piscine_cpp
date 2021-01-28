@@ -49,13 +49,20 @@ void Bureaucrat::decrement()
 	grade++;
 
 }
-/*
+
 void Bureaucrat::signForm(Form *f)
 {
-	std::cout << f->getName();
-//	f->beSigned(*this);
+	try
+	{
+		f->beSigned(*this);
+    	std::cout << name << " signs " << f->getName() << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << name << " cannot sign " << f->getName() << " because " << e.what() << std::endl;
+	}
 }
-*/
+
 std::ostream &operator<<(std::ostream &out, Bureaucrat &bur) {
   return (out << bur.getName() << ", bureaucrat grade " << bur.getGrade() << std::endl);
 }

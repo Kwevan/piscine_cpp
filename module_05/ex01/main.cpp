@@ -56,10 +56,19 @@ int main()
 		Bureaucrat man("Monsieur le Bureaucrate", 1);
 
 		std::cout << form;
+		std::cout << "\n\n-----------\n\n";
 
-//		man.signForm(&form);
+		man.signForm(&form);
 
-//		std::cout << form;
+		std::cout << "\n\n-----------\n\n";
+
+		std::cout << form;
+
+		man.decrement();
+		std::cout << "\n\n-----------\n\n";
+
+		man.signForm(&form);
+
 	}
 	catch (std::exception & e)
 	{
