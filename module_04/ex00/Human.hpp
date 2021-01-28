@@ -15,7 +15,6 @@ class Human : public Victim
 		virtual ~Human();
 	private:
 		Human();
-		std::string name;
 };
 
 # endif
