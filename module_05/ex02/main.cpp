@@ -1,12 +1,12 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-
-
-	//Trying to execute an non signed form
+	//Trying to execute a non signed form
 	try
 	{
 		ShrubberyCreationForm form("home");
@@ -19,7 +19,7 @@ int main()
 	}
 	
 
-	//Trying to execute an signed form by a too low bureaucrat
+	//Trying to execute a signed form by a too low bureaucrat
 	try
 	{
 		ShrubberyCreationForm form("home");
@@ -34,19 +34,19 @@ int main()
 		std::cout << "2 Error: " << e.what() << std::endl;	
 	}
 
-	Bureaucrat				bur("eaucrat", 1);
-	ShrubberyCreationForm	shrub("b");
-//	RobotomyRequestForm		robot("o");
-//	PresidentialPardonForm	pres("i");
+	Bureaucrat				bur("Bureaucrat", 1);
+	ShrubberyCreationForm	shrub("TreeForm");
+	RobotomyRequestForm		robot("Mr Robot");
+	PresidentialPardonForm	pres("presidentForm");
 
 	bur.signForm(&shrub);
 	bur.executeForm(shrub);
 
-//	bur.signForm(robot);
-//	bur.executeForm(robot);
+	bur.signForm(&robot);
+	bur.executeForm(robot);
 
-//	bur.signForm(pres);
-//	bur.executeForm(pres);
+	bur.signForm(&pres);
+	bur.executeForm(pres);
 
 	return 0;
 }
