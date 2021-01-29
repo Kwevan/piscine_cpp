@@ -29,8 +29,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	std::string fName = getTarget();
 	fName += "_shrubbery";
 
-	std::ofstream myFile(fName);
-
+	std::ofstream myFile;
+	myFile.open(fName.c_str(), std::ofstream::trunc);
+	if (!myFile.is_open())
+		return;
   	myFile << "\n  *  \n *** \n*****\n  |   \n\n";
  
  	myFile << "\n  *      *      *\n ***    ***    ***\n*****  *****  *****\n  |      |      |\n\n";
