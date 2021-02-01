@@ -35,7 +35,7 @@ int main()
 	}
 
 	Bureaucrat				bur("Bureaucrat", 1);
-	ShrubberyCreationForm	shrub("TreeForm");
+	ShrubberyCreationForm	shrub("Keiko_Matsui");
 	RobotomyRequestForm		robot("Mr Robot");
 	PresidentialPardonForm	pres("presidentForm");
 
