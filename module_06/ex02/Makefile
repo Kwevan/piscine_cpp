@@ -1,6 +1,7 @@
-NAME	=	idk
+NAME	=	identify
 
 SRCS 	=	main.cpp\
+				Base.cpp\
 
 CC		=	clang++
 
