@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <array>
+#include <limits.h>
 
 
 typedef struct	s_data

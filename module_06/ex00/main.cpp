@@ -1,7 +1,9 @@
-#include <iostream>
+# include <iostream>
 # include <iomanip>
 # include <cmath>
+# include <cstdlib>
 # include <iomanip>
+# include <limits.h>
 
 void	ft_convert_to_char(double value, bool is_ok)
 {
@@ -15,8 +17,7 @@ void	ft_convert_to_char(double value, bool is_ok)
 			std::cout << "Non displayable" << std::endl;
 	}
 	else
-		std::cout << " impossible" << std::endl;
-	
+		std::cout << " impossible" << std::endl;	
 }
 
 
@@ -62,7 +63,7 @@ int main(int ac, char **av)
 	bool is_ok = true;
 	try
 	{
-		value = std::stod(av[1]);
+		value = std::atof(av[1]);
 		(void)value;
 	}
 	catch (std::exception &e) 
