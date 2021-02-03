@@ -1,0 +1,4 @@
+Archi faux,
+
+1 Le sujet demande de créer 2 std::string dans la structure
+2 La taille de notre data est donc differente
