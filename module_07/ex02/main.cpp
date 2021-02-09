@@ -2,9 +2,8 @@
 
 int main()
 {
-    Array<int> emptyArr = Array<int>(2);
-	std::cout << "size of emptyArr is: " << emptyArr.size()
-	<< "\n\n";
+    Array<int> emptyArr;
+	std::cout << "size of emptyArr is: " << emptyArr.size() << "\n\n";
     
 	Array<int> arrInt = Array<int>(2);
 
