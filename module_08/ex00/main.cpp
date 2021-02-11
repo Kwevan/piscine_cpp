@@ -23,7 +23,10 @@ int main()
 	mList = get_new_list();
 
 	std::cout << "[ Displaying list content ]"<< "\n\n";
-	for_each(mList.begin(), mList.end(), &print);
+	for (std::list<int>::iterator it = mList.begin(); it != mList.end(); ++it)
+	{
+		print(*it);
+	}
 
 	std::cout << "\n[ Trying easyfind(..) ]\n";
 	easyfind(mList, 13);
